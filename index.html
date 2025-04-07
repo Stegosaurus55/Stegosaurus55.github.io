@@ -1,2 +1,42 @@
+<head>
 <script src="https://cdn.logwork.com/widget/countdown.js"></script>
-<a href="https://logwork.com/countdown-timer" onclick="return false;" class="countdown-timer" data-style="flip3" data-timezone="Europe/Amsterdam" data-language="nl" data-textcolor="#000000" data-date="2026-01-19 00:00" data-unitscolor="#000000">Aftellen tot Charlotte's verjaardag</a>
+
+</head>
+<body>
+    <a href="https://logwork.com/countdown-timer" onclick="return false;" class="countdown-timer" data-style="flip3" data-timezone="Europe/Amsterdam" data-language="nl" data-textcolor="#000000" data-date="2026-01-19 00:00" data-unitscolor="#000000">Aftellen tot Charlotte's verjaardag'</a>
+    <p id='lengte' style="text-align:center;font-size:26px;font-family:Arial"></p>
+
+
+    <script>
+        const eenDag = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+        const volgendeVerjaardag = new Date(2026, 0, 19);
+        const vorigeVerjaardag = new Date(2025, 0, 19);
+        const vandaag = new Date();
+        const verschil = Math.round(Math.abs((vorigeVerjaardag - vandaag) / eenDag));
+        const teGaan = Math.round(Math.abs((volgendeVerjaardag - vandaag) / eenDag));
+
+        var abcd = "Ze is al " + verschil + " dagen 19.";
+        document.getElementById('lengte').innerHTML = abcd;
+
+        var background;
+        if (teGaan > 250) {
+            background = "#33cc33";
+        }
+        else if (teGaan > 200) {
+            background = "#99ff33";
+        }
+        else if (teGaan > 150) {
+            background = "#ffff00";
+        }
+        else if (teGaan > 100) {
+            background = "#ff9933";
+        }
+        else if (teGaan > 50) {
+            background = "#ff6600";
+        }
+        else {
+            background = "red";
+        }
+        document.body.style.background = background;
+    </script>
+</body>
